@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>图片浏览器</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<a name=top></a>
+		<a id="a" href="#top"><img id="up" src="img/箭头向上.png" align="right"/></a>	
+	</body>
+	<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	 <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var count = 1;
+
+		function big(){
+			$("img[name='img']").hover(function(){
+				$(this).width("100%");
+			},function(){
+				$(this).width("80%");
+			});
+			$("img[name='img']").toggle(function(){
+				$(this).width("900px");
+			},function(){
+				$(this).width("80%");
+			});
+		};
+		function addimg(){
+			var $table = $("<table></table>");
+			$("body").append($table);
+			var $tr=$("<tr></tr>");
+			$table.append($tr);
+			for (var i = 0; i < 4; i++) {
+				var $td = $("<td align='center' width='25%'></td>");
+				$tr.append($td);
+				var $img = $("<img class='img-circle' name='img' src='img/"+count+".jpg' width='80%' />");
+				$td.append($img);
+				if(count > 50){
+					count = 1;
+				}else{
+					count++;
+				}
+			}
+			big();
+			$("#a").remove();
+			var $up = "<a id='a' href='#top'><img id='up' src='img/箭头向上.png' align='right'/></a>";
+			$("body").append($up);
+		}
+		for (var i = 0; i < 10; i++) {
+			addimg();
+		}	
+	</script>
+</html>

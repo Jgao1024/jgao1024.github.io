@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+  	<h1 align="center">注册</h1><hr>
+  	
+    <form class="form-horizontal"  name="registerForm" id="registerForm" method="post" action="/Rootweb/register">
+    
+    	<!-- username 用户名开始 -->
+	  <div class="form-group"><!--has-success 添加绿色样式  -->
+	    <label class="control-label col-sm-3" for="inputSuccess3">用户名:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">User</span>
+	      <input type="text" class="form-control" id="username" name="username" placeholder="输入用户名">
+	      <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- username 用户名结束 -->
+	  
+	  <!-- password 密码开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputSuccess3">密码:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">Pass</span>
+	      <input type="password" class="form-control" id="password" name="password"  placeholder="请输入密码">
+	      <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- password 密码开始 -->
+	  
+	  <!-- password2 验证密码开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputSuccess3">重复密码:</label>
+	    <div class="col-sm-3">
+	    	<div class="input-group">
+	        <span class="input-group-addon">Pass</span>
+	      <input type="password" class="form-control" id="password2" aria-describedby="inputSuccess3Status" placeholder="请再次输入密码">
+	      <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- password2 验证密码开始 -->
+	  
+	  <!--gender 性别开始 -->
+	   <div class="form-group">
+	   <label class="control-label col-sm-3" for="inputSuccess3">性别:</label>
+	    <div class="col-sm-3">
+		 	 <label class="radio-inline">
+			  <input type="radio" name="gender" id="gender_male" value="男">男
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" name="gender" id="gender_female" value="女">女
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" name="gender" id="gender_male" value="保密" disabled>保密
+			</label>
+		</div>
+		</div>
+	  <!--gender 性别结束 -->
+	  
+	  	<!-- age 年龄开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputSuccess3">年龄:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">Age</span>
+	      <input type="text" class="form-control" id="age" name="age" aria-describedby="inputSuccess3Status" placeholder="请输入年龄">
+	      <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- age 年龄结束 -->
+	  
+	  <!-- edu 学历开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputGroupSuccess2">学历:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">Edu</span>
+	      	<select class="form-control" name="edu" id="edu" placeholder="-请选择学历-">
+			  <option value="">-请选择学历-</option>
+			  <option value="专科">专科</option>
+			  <option value="本科">本科</option>
+			  <option value="研究生">研究生</option>
+			  <option value="硕士">硕士</option>
+			  <option value="博士">博士</option>
+			  <option value="其他">其他</option>
+			</select>
+	      <span class="glyphicon glyphicon-education form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- edu 学历结束 -->
+	  
+	<!-- birthday 出生日期开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputSuccess3">出生日期:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">Bir</span>
+	      <input type="text" class="form-control" id="birthday" name="birthday" aria-describedby="inputSuccess3Status" placeholder="请输入出生日期" onclick="WdatePicker()">
+	      <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- birthday 出生日期结束 -->
+	  
+	  <!-- hobby 兴趣爱好开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputGroupSuccess2">兴趣爱好:</label>
+	    <div class="col-sm-3">
+	      		<input type="checkbox" name="hobby" id="qq1" value="乒乓球"/>&nbsp;乒乓球 &nbsp;
+	          <input type="checkbox" name="hobby" id="qq2" value="羽毛球" />&nbsp;羽毛球 &nbsp;
+	          <input type="checkbox" name="hobby" id="qq3" value="上网" />&nbsp;上网 &nbsp;
+	          <input type="checkbox" name="hobby" id="qq4" value="旅游" />&nbsp;旅游 &nbsp;
+	          <input type="checkbox" name="hobby" id="qq5" value="购物" />&nbsp;购物 &nbsp;
+	          <label for="checkbox1" class="error" style="display: none;">爱好必须选一个</label>
+	    </div>
+	  </div>
+	  <!-- hobby 兴趣爱好结束 -->
+	  
+	  <!-- idcard 身份证开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputSuccess3">身份证:</label>
+	    <div class="col-sm-3">
+	    <div class="input-group">
+	        <span class="input-group-addon">ID</span>
+	      <input type="text" class="form-control" id="idcard" name="idcard" aria-describedby="inputSuccess3Status" placeholder="请输入身份证">
+	      <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+	    </div>
+	    </div>
+	  </div>
+	  <!-- idcard 身份证结束 -->
+	  
+	  <!-- Email 邮箱开始 -->
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="inputGroupSuccess2">邮箱:</label>
+	    <div class="col-sm-3">
+	      <div class="input-group">
+	        <span class="input-group-addon">Email</span>
+	        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="inputGroupSuccess2Status" placeholder="请输入邮箱">
+	        <span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+	      </div>
+	    </div>
+	  </div>
+	   <!-- Email 邮箱结束 -->
+		
+		<!--address 地址 开始 -->
+		  <div class="form-group form-inline">
+		    <label class="control-label col-sm-3" for="inputGroupSuccess2">地址:</label>
+		    <div class="col-sm-3">
+		    <div class="input-group">
+		        <span class="input-group-addon">Pro</span>
+		      	<select  class="form-control " name="province" id="province" placeholder="-请选择省份-">
+				<option value="none"><small>请选择省</small></option>
+				</select>
+		        <span class="input-group-addon">City</span>
+				<select  class="form-control " name="city" id="city" placeholder="-请选择城市-">
+					<option value="none">请选择市</option>
+				</select>
+	    	 </div>
+		    </div>
+		    </div>
+		  </div>
+	  <!-- address 地址结束 -->
+		
+		<!-- register 注册开始 -->
+	  <div class="form-group">
+	    <div class="col-sm-offset-4 col-sm-2">
+	      <input class="btn btn-primary" type="submit" class="form-control" id="register" aria-describedby="inputSuccess3Status" value="注册">
+	    </div>
+	  </div>
+	  <!-- register 注册结束 -->
+	</form>
+  </body>
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/china.js"></script>
+	<script type="text/javascript">
+		var province = document.getElementById("province");
+		function addProvince(){
+			for (var i = 0; i < china.length; i++) {
+				var option = document.createElement("option");
+				option.value = china[i].name;
+				option.innerHTML = china[i].name;
+				province.appendChild(option);
+			}
+		}
+		addProvince();
+		province.setAttribute("onchange","addcity()");
+		var city = document.getElementById("city");
+		function addcity(){
+			for (var i = 0; i < china.length; i++) {
+				if(china[i].name == province.value){
+					var cities = china[i].cities;
+				}
+			}
+			city.innerHTML = "<option value='none'><small>请选择市</small></option>";
+			for (var i = 0; i < cities.length; i++) {
+				var option = document.createElement("option");
+				option.value = cities[i];
+				option.innerHTML = cities[i];
+				city.appendChild(option);
+			}
+		}
+	</script>
+	
+</html>
